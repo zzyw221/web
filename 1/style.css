@@ -1,0 +1,148 @@
+/* ============================================================
+   全局重置与基础样式
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 柔和的渐变背景，提升视觉质感 */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    padding: 20px;
+}
+
+/* ============================================================
+   名片卡片主体
+   ============================================================ */
+.card {
+    /* 白色卡片背景 */
+    background: #ffffff;
+    /* 12px 圆角 */
+    border-radius: 12px;
+    /* 柔和阴影，营造悬浮感 */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    /* 内部间距 */
+    padding: 40px 36px;
+    /* 最大宽度限制，适配不同屏幕 */
+    max-width: 380px;
+    width: 100%;
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 鼠标悬停时轻微上浮的过渡动画（0.3秒平滑过渡） */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+/* 鼠标悬停效果：上浮 8px，阴影加深 */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   圆形头像
+   ============================================================ */
+.avatar {
+    /* 圆形容器 */
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    /* 头像边框，增加层次感 */
+    border: 4px solid #e8eef5;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================================
+   姓名与职位信息
+   ============================================================ */
+.name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a2a3a;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.position {
+    font-size: 15px;
+    color: #4a6fa5;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.company {
+    font-size: 13px;
+    color: #8899aa;
+    margin-bottom: 24px;
+}
+
+/* ============================================================
+   联系方式区域
+   ============================================================ */
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #556677;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-item a {
+    color: #556677;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* 链接悬停时变为品牌蓝色 */
+.contact-item a:hover {
+    color: #4a6fa5;
+    text-decoration: underline;
+}
+
+/* 图标样式 */
+.contact-item .icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   响应式适配：小屏幕下微调间距
+   ============================================================ */
+@media (max-width: 420px) {
+    .card {
+        padding: 30px 24px;
+    }
+
+    .name {
+        font-size: 22px;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+    }
+}
